@@ -1,0 +1,21 @@
+# Build artifacts
+*.exe
+*.out
+*.o
+*.obj
+*.exe~
+a.out
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Compiled output directory
+bin/
+build/
