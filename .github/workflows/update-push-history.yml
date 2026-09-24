@@ -1,0 +1,77 @@
+name: Update README Push History
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Programs/**"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-readme-push-history
+  cancel-in-progress: true
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Add push to README
+        env:
+          PUSH_DATE: ${{ github.event.head_commit.timestamp }}
+          COMMIT_SHA: ${{ github.sha }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          readme = Path(os.environ.get("README_PATH", "README.md"))
+          text = readme.read_text(encoding="utf-8")
+          heading = "## Push History"
+          short_sha = os.environ["COMMIT_SHA"][:7]
+          section_start = text.index(heading)
+          section = text[section_start:]
+
+          if f"`{short_sha}`" in section:
+              raise SystemExit(0)
+
+          date = os.environ["PUSH_DATE"][:10]
+          message = os.environ["COMMIT_MESSAGE"].splitlines()[0].replace("|", "\\|")
+          row = f"| {date} | `{short_sha}` | {message} |"
+          lines = text.splitlines()
+          heading_index = lines.index(heading)
+          table_started = False
+          insert_at = None
+
+          for index in range(heading_index + 1, len(lines)):
+              if lines[index].startswith("|"):
+                  table_started = True
+              elif table_started:
+                  insert_at = index
+                  break
+
+          if insert_at is None:
+              raise SystemExit("Push history table not found")
+
+          lines.insert(insert_at, row)
+          readme.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          PY
+      - name: Commit README update
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README push history is already current"
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: update README push history"
+          git push origin HEAD:main

@@ -33,6 +33,9 @@ C-Plus-Plus-Lab-ASETK/
 ├── 📄 README.md
 ├── 📄 LICENSE
 ├── 📄 .gitignore
+├── .github/
+│   └── workflows/
+│       └── update-push-history.yml
 └── 📁 Programs/
     ├── 📁 01_Functions/
     │   ├── call_by_value.cpp
@@ -110,6 +113,18 @@ $ g++ -Wall -Wextra -std=c++11 <program>.cpp -o out
 - **Compiler:** GCC / MinGW (`g++`)
 - **Editor:** Visual Studio Code
 - **Platform:** Cross-platform (Windows, Linux, macOS)
+
+---
+
+## Push History
+
+This table is updated automatically after every new code push to `main`.
+
+| Push Date | Commit | Update |
+| :--- | :--- | :--- |
+| 2026-08-21 | `0eea9a2` | Initial repository setup |
+| 2026-08-22 | `6f7b4c5` | Organized C++ programs and added project documentation |
+| 2026-09-24 | `9c8e9f3` | Added matrix operations and OOP constructor/destructor programs |
 
 ---
 
