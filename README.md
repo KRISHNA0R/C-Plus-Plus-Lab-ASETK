@@ -38,22 +38,28 @@ C-Plus-Plus-Lab-ASETK/
     │   ├── call_by_value.cpp
     │   ├── call_by_reference.cpp
     │   └── call_by_value_and_reference.cpp
-    └── 📁 02_Palindrome/
-        ├── palindrome_number.cpp
-        └── palindrome_string.cpp
+    ├── 📁 02_Palindrome/
+    │   ├── palindrome_number.cpp
+    │   └── palindrome_string.cpp
+    ├── 📁 03_Matrix_Operations/
+    │   └── matrix_operations.cpp
+    └── 📁 04_OOP/
+        └── rectangle_circle_constructors_destructors.cpp
 ```
 
 ---
 
 ## 🧪 Programs
 
-| 🔢 No. | 🗂️ Category        | 📝 Program                       | 🎯 Concept Demonstrated                          |
-| :---: | :----------------- | :------------------------------- | :----------------------------------------------- |
-| 01    | Functions          | `call_by_value.cpp`              | Passing arguments by value                       |
-| 02    | Functions          | `call_by_reference.cpp`          | Passing arguments by reference                   |
-| 03    | Functions          | `call_by_value_and_reference.cpp`| Comparison of value vs. reference passing        |
-| 04    | Palindrome         | `palindrome_number.cpp`          | Checking if a number is a palindrome             |
-| 05    | Palindrome         | `palindrome_string.cpp`          | Checking if a string is a palindrome             |
+| 🔢 No. | 🗂️ Category             | 📝 Program                                      | 🎯 Concept Demonstrated                                  |
+| :---: | :---------------------- | :---------------------------------------------- | :------------------------------------------------------- |
+| 01    | Functions               | `call_by_value.cpp`                             | Passing arguments by value                               |
+| 02    | Functions               | `call_by_reference.cpp`                         | Passing arguments by reference                           |
+| 03    | Functions               | `call_by_value_and_reference.cpp`               | Comparison of value and reference passing                |
+| 04    | Palindrome              | `palindrome_number.cpp`                         | Checking whether a number is a palindrome                |
+| 05    | Palindrome              | `palindrome_string.cpp`                         | Checking whether a string is a palindrome                |
+| 06    | Matrix Operations       | `matrix_operations.cpp`                         | Addition, subtraction, multiplication, and transpose     |
+| 07    | Object-Oriented Programming | `rectangle_circle_constructors_destructors.cpp` | Constructors, destructors, and perimeter calculations    |
 
 > 💡 *New experiments are added under their relevant category folder as the
 > lab progresses. If a suitable category does not exist, a new numbered folder
