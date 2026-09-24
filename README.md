@@ -116,15 +116,20 @@ $ g++ -Wall -Wextra -std=c++11 <program>.cpp -o out
 
 ---
 
-## Push History
+## File Push History
 
-This table is updated automatically after every new code push to `main`.
+This table shows the latest recorded push date for every program file. GitHub
+Actions keeps each row updated whenever a file under `Programs` changes.
 
-| Push Date | Commit | Update |
+| Program File | Last Push Date | Commit |
 | :--- | :--- | :--- |
-| 2026-08-21 | `0eea9a2` | Initial repository setup |
-| 2026-08-22 | `6f7b4c5` | Organized C++ programs and added project documentation |
-| 2026-09-24 | `9c8e9f3` | Added matrix operations and OOP constructor/destructor programs |
+| `Programs/03_Matrix_Operations/matrix_operations.cpp` | 2026-09-24 | `9c8e9f3` |
+| `Programs/04_OOP/rectangle_circle_constructors_destructors.cpp` | 2026-09-24 | `9c8e9f3` |
+| `Programs/01_Functions/call_by_reference.cpp` | 2026-08-22 | `6f7b4c5` |
+| `Programs/01_Functions/call_by_value.cpp` | 2026-08-22 | `6f7b4c5` |
+| `Programs/01_Functions/call_by_value_and_reference.cpp` | 2026-08-22 | `6f7b4c5` |
+| `Programs/02_Palindrome/palindrome_number.cpp` | 2026-08-22 | `6f7b4c5` |
+| `Programs/02_Palindrome/palindrome_string.cpp` | 2026-08-22 | `6f7b4c5` |
 
 ---
 
